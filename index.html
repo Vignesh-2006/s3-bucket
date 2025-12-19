@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vignesh S - Professional Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for Dark Mode strategy (class) -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <!-- Use Poppins font family for a modern look -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Custom scrollbar style for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #6D28D9; /* Violet-700 */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1F2937; /* Gray-800 */
+        }
+
+        /* Custom animation for hero title background gradient */
+        @keyframes pulse-gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animate-gradient {
+            background-size: 200% 200%;
+            animation: pulse-gradient 6s ease infinite;
+        }
+    </style>
+</head>
+<!-- Default background is light, dark:bg-gray-900 enables dark mode -->
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-xl dark:shadow-gray-700/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex justify-between items-center h-16">
+                <!-- Logo/Name -->
+                <a href="#hero" class="text-2xl font-extrabold text-pink-900 dark:text-white transition duration-300 hover:text-violet-600 dark:hover:text-violet-400">
+                    Vignesh.<span class="text-pink-600 dark:text-pink-900">S</span>
+                </a>
+                <!-- Navigation Links and Theme Toggle -->
+                <div class="flex space-x-2 sm:space-x-4 items-center">
+                    <!-- Theme Toggle Button -->
+                    <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-violet-300 dark:focus:ring-violet-600 font-medium rounded-lg text-sm p-2.5 transition duration-300">
+                        <!-- Dark Icon (Moon) -->
+                        <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.707A8 8 0 016.207 2.707a8.001 8.001 0 1011.086 11.086z"></path></svg>
+                        <!-- Light Icon (Sun) -->
+                        <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 01-2 0V3a1 1 0 011-1zm4.364 1.636a1 1 0 00-.707 1.707l.707.707a1 1 0 001.414-1.414l-.707-.707zm-4.364 14.728a1 1 0 010-2l.707-.707a1 1 0 011.414 1.414l-.707.707zm-7.778-7.778a1 1 0 011 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707zm14.856 0a1 1 0 010 2l-.707.707a1 1 0 01-1.414-1.414l.707-.707zm-9.178 7.464l.707-.707a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414-1.414zM4.364 4.364l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zM10 8a2 2 0 100 4 2 2 0 000-4z"></path></svg>
+                    </button>
+                    
+                    <a href="#about" class="text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition duration-300 rounded-lg p-2">About</a>
+                    <a href="#skills" class="text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition duration-300 rounded-lg p-2">Skills</a>
+                    <!-- New Navigation Option for Certifications -->
+                    <a href="#certifications" class="text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition duration-300 rounded-lg p-2 hidden sm:block">Certifications</a>
+                    <a href="#portfolio" class="text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition duration-300 rounded-lg p-2">Portfolio</a>
+                    <a href="#contact" class="text-sm font-semibold text-gray-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition duration-300 rounded-lg p-2">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto">
+        <!-- 1. Hero/Introduction Section -->
+        <section id="hero" class="py-20 md:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 text-center dark:bg-gray-900 bg-white">
+            <div class="max-w-4xl mx-auto">
+                <!-- Placeholder Avatar/Image with subtle glow effect -->
+                <div class="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-6 bg-violet-600 rounded-full flex items-center justify-center text-4xl sm:text-6xl font-extrabold text-white shadow-2xl shadow-violet-500/50 transform hover:scale-105 transition duration-500">
+                    VS
+                </div>
+                <!-- Enhanced Title with animation -->
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-violet-600 to-pink-600 dark:from-violet-400 dark:to-pink-500 animate-gradient">
+                    Hello, I'm Vignesh. S
+                </h1>
+                <p class="text-xl sm:text-2xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+                    A passionate developer focused on creating user-friendly, high-performance web solutions.
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <!-- Animated Buttons -->
+                    <a href="#portfolio" class="px-8 py-3 bg-violet-600 text-white font-bold rounded-xl shadow-xl shadow-violet-500/50 hover:bg-violet-700 transition duration-300 transform hover:scale-105 active:scale-95">
+                        View My Work
+                    </a>
+                    <a href="#contact" class="px-8 py-3 border-2 border-gray-400 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-bold rounded-xl shadow-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition duration-300 transform hover:scale-105 active:scale-95">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. About/Education Section -->
+        <section id="about" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gray-200 dark:bg-gray-800 rounded-xl mx-4 sm:mx-6 lg:mx-8 mb-16 shadow-2xl dark:shadow-gray-700/50">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-violet-600 dark:text-violet-400">About Me & Education</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Bio -->
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">Who I Am</h3>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                        I am a dedicated student developer with a strong foundation in engineering principles and a drive to solve complex problems through code. My focus is on delivering efficient and scalable solutions. I am constantly learning new technologies to stay ahead in the dynamic field of web development.
+                    </p>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                        I thrive in environments where creativity meets challenge, and I am always looking for opportunities to contribute to impactful projects.
+                    </p>
+                </div>
+                <!-- Education Timeline -->
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">Academic Journey</h3>
+                    <div class="relative pl-6 border-l-2 border-violet-500">
+                        <div class="absolute w-3 h-3 bg-violet-500 rounded-full -left-1.5 top-1 shadow-md"></div>
+                        <div class="mb-4">
+                            <p class="font-bold text-lg text-gray-900 dark:text-white">Sri Eshwar College of Engineering</p>
+                            <p class="text-violet-600 dark:text-violet-300 text-sm">Graduation Year: 2024</p>
+                            <p class="text-gray-600 dark:text-gray-400 mt-1">
+                                Attended Sri Eshwar College of Engineering in Coimbatore, Tamil Nadu, India. Focusing on core engineering concepts and practical applications in technology.
+                            </p>
+                        </div>
+                        <div class="absolute w-3 h-3 bg-violet-500 rounded-full -left-1.5 shadow-md"></div>
+                        <div>
+                            <p class="font-bold text-lg text-gray-900 dark:text-white">Location</p>
+                            <p class="text-gray-600 dark:text-gray-400">Coimbatore, Tamil Nadu, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Skills Section -->
+        <section id="skills" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 dark:bg-gray-900 bg-white">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-violet-600 dark:text-violet-400">Technical Skills & Expertise</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Skill Card 1: Frontend (Added Animation/Hover effect) -->
+                <div class="group bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-xl dark:shadow-gray-700/50 transition duration-500 hover:shadow-violet-500/50 transform hover:translate-y-[-4px] border border-gray-300 dark:border-gray-700">
+                    <h3 class="text-xl font-bold mb-4 text-pink-600 dark:text-pink-400 border-b border-gray-300 dark:border-gray-700 pb-2 transition duration-500 group-hover:text-violet-600 dark:group-hover:text-violet-400">Frontend Development</h3>
+                    <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                        <!-- Added pulse animation to draw attention to list items -->
+                        <li class="flex items-center"><span class="w-2 h-2 mr-2 bg-violet-500 rounded-full animate-pulse"></span>HTML5 & CSS3</li>
+                        <li class="flex items-center"><span class="w-2 h-2 mr-2 bg-violet-500 rounded-full animate-pulse"></span>JavaScript (ES6+)</li>
+                        <li class="flex items-center"><span class="w-2 h-2 mr-2 bg-violet-500 rounded-full animate-pulse"></span>React / Vue / Angular (Placeholder - Update with your tech)</li>
+                        <li class="flex items-center"><span class="w-2 h-2 mr-2 bg-violet-500 rounded-full animate-pulse"></span>Tailwind CSS & Responsive Design</li>
+                    </ul>
+                </div>
+                <!-- Skill Card 2: Backend & Database (Added Animation/Hover effect) -->
+                <div class="group bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-xl dark:shadow-gray-700/50 transition duration-500 hover:shadow-violet-500/50 transform hover:translate-y-[-4px] border border-gray-300 dark:border-gray-700">
+                    <h3 class="text-xl font-bold mb-4 text-pink-600 dark:text-pink-400 border-b border-gray-300 dark:border-gray-700 pb-2 transition duration-500 group-hover:text-violet-600 dark:group-hover:text-violet-400">Backend & Database</h3>
+                    <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                        <li class="flex items-center"><span class="w-2 h-2 mr-2 bg-violet-500 rounded-full animate-pulse"></span>Python / Node.js (As preferred)</li>
+                        <li class="flex items-center"><span class="w-2 h-2 mr-2 bg-violet-500 rounded-full animate-pulse"></span>SQL (PostgreSQL, MySQL)</li>
+                        <li class="flex items-center"><span class="w-2 h-2 mr-2 bg-violet-500 rounded-full animate-pulse"></span>NoSQL (MongoDB / Firestore)</li>
+                        <li class="flex items-center"><span class="w-2 h-2 mr-2 bg-violet-500 rounded-full animate-pulse"></span>RESTful API Design & Integration</li>
+                    </ul>
+                </div>
+                <!-- Skill Card 3: Tools & Others (Added Animation/Hover effect) -->
+                <div class="group bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-xl dark:shadow-gray-700/50 transition duration-500 hover:shadow-violet-500/50 transform hover:translate-y-[-4px] border border-gray-300 dark:border-gray-700">
+                    <h3 class="text-xl font-bold mb-4 text-pink-600 dark:text-pink-400 border-b border-gray-300 dark:border-gray-700 pb-2 transition duration-500 group-hover:text-violet-600 dark:group-hover:text-violet-400">Tools, DevOps & Cloud</h3>
+                    <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                        <li class="flex items-center"><span class="w-2 h-2 mr-2 bg-violet-500 rounded-full animate-pulse"></span>Git & GitHub/GitLab Version Control</li>
+                        <li class="flex items-center"><span class="w-2 h-2 mr-2 bg-violet-500 rounded-full animate-pulse"></span>Docker & Containerization</li>
+                        <li class="flex items-center"><span class="w-2 h-2 mr-2 bg-violet-500 rounded-full animate-pulse"></span>VS Code / Webpack / Vite</li>
+                        <li class="flex items-center"><span class="w-2 h-2 mr-2 bg-violet-500 rounded-full animate-pulse"></span>Basic Cloud Platforms (AWS/GCP/Azure)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. New Section: Certifications & Awards (The "more options" functionality) -->
+        <section id="certifications" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 dark:bg-gray-800 bg-gray-100 rounded-xl mx-4 sm:mx-6 lg:mx-8 mb-16 shadow-2xl dark:shadow-gray-700/50">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-pink-600 dark:text-pink-400">Certifications & Awards</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Certification Card 1 (Hover Effect) -->
+                <div class="group bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg border border-violet-300 dark:border-violet-700 transition duration-500 hover:shadow-pink-500/50 transform hover:scale-[1.03] hover:translate-y-[-2px]">
+                    <h3 class="text-xl font-bold text-violet-600 dark:text-violet-400 mb-2">Google Cloud Certified</h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-3 text-sm">Associate Cloud Engineer Certification - Demonstrating proficiency in fundamental GCP concepts.</p>
+                    <span class="text-xs font-medium bg-pink-600/10 dark:bg-pink-600/30 text-pink-600 dark:text-pink-300 px-2 py-1 rounded-full">Cloud Computing</span>
+                </div>
+                <!-- Certification Card 2 (Hover Effect) -->
+                <div class="group bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg border border-violet-300 dark:border-violet-700 transition duration-500 hover:shadow-pink-500/50 transform hover:scale-[1.03] hover:translate-y-[-2px]">
+                    <h3 class="text-xl font-bold text-violet-600 dark:text-violet-400 mb-2">Advanced JavaScript Mastery</h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-3 text-sm">Issued by Code Academy - Covering asynchronous programming, closures, and modern ES6+ features.</p>
+                    <span class="text-xs font-medium bg-pink-600/10 dark:bg-pink-600/30 text-pink-600 dark:text-pink-300 px-2 py-1 rounded-full">Frontend</span>
+                </div>
+                <!-- Award Card 3 (Hover Effect) -->
+                <div class="group bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg border border-violet-300 dark:border-violet-700 transition duration-500 hover:shadow-pink-500/50 transform hover:scale-[1.03] hover:translate-y-[-2px]">
+                    <h3 class="text-xl font-bold text-violet-600 dark:text-violet-400 mb-2">College Hackathon Winner</h3>
+                    <p class="text-gray-700 dark:text-gray-300 mb-3 text-sm">First place award for innovative project in sustainable technology development (Team Lead).</p>
+                    <span class="text-xs font-medium bg-pink-600/10 dark:bg-pink-600/30 text-pink-600 dark:text-pink-300 px-2 py-1 rounded-full">Project Innovation</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Portfolio/Projects Section (now section 5) -->
+        <section id="portfolio" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 dark:bg-gray-900 bg-white">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-pink-600 dark:text-pink-400">My Portfolio Highlights</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project Card 1 (Enhanced Animation) -->
+                <div class="group bg-gray-100 dark:bg-gray-800 rounded-xl overflow-hidden shadow-xl dark:shadow-gray-700/50 transition duration-500 hover:shadow-pink-500/50 transform hover:scale-[1.02] hover:translate-y-[-2px] border border-gray-300 dark:border-gray-700">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition duration-300">Web Application Framework</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">A full-stack project utilizing modern frameworks (e.g., React, Node.js, and MongoDB) to build a scalable data management system.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs font-medium bg-violet-600/10 dark:bg-violet-600/30 text-violet-600 dark:text-violet-300 px-2 py-1 rounded-full">React</span>
+                            <span class="text-xs font-medium bg-violet-600/10 dark:bg-violet-600/30 text-violet-600 dark:text-violet-300 px-2 py-1 rounded-full">Node.js</span>
+                            <span class="text-xs font-medium bg-violet-600/10 dark:bg-violet-600/30 text-violet-600 dark:text-violet-300 px-2 py-1 rounded-full">Database</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-pink-600 dark:text-pink-400 hover:text-pink-700 dark:hover:text-pink-300 font-semibold transition duration-300">
+                            View Project
+                            <!-- Added animation to the arrow on hover -->
+                            <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 (Enhanced Animation) -->
+                <div class="group bg-gray-100 dark:bg-gray-800 rounded-xl overflow-hidden shadow-xl dark:shadow-gray-700/50 transition duration-500 hover:shadow-pink-500/50 transform hover:scale-[1.02] hover:translate-y-[-2px] border border-gray-300 dark:border-gray-700">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition duration-300">Engineering Simulation Tool</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">Developed a simulation tool relevant to engineering studies, using Python and data visualization libraries (e.g., Matplotlib).</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs font-medium bg-violet-600/10 dark:bg-violet-600/30 text-violet-600 dark:text-violet-300 px-2 py-1 rounded-full">Python</span>
+                            <span class="text-xs font-medium bg-violet-600/10 dark:bg-violet-600/30 text-violet-600 dark:text-violet-300 px-2 py-1 rounded-full">Data Analysis</span>
+                            <span class="text-xs font-medium bg-violet-600/10 dark:bg-violet-600/30 text-violet-600 dark:text-violet-300 px-2 py-1 rounded-full">Visualization</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-pink-600 dark:text-pink-400 hover:text-pink-700 dark:hover:text-pink-300 font-semibold transition duration-300">
+                            View Project
+                            <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 (Enhanced Animation) -->
+                <div class="group bg-gray-100 dark:bg-gray-800 rounded-xl overflow-hidden shadow-xl dark:shadow-gray-700/50 transition duration-500 hover:shadow-pink-500/50 transform hover:scale-[1.02] hover:translate-y-[-2px] border border-gray-300 dark:border-gray-700">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition duration-300">Responsive Landing Page</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">Created a fast, responsive, and aesthetically pleasing landing page using HTML, Tailwind CSS, and vanilla JavaScript.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs font-medium bg-violet-600/10 dark:bg-violet-600/30 text-violet-600 dark:text-violet-300 px-2 py-1 rounded-full">HTML & CSS</span>
+                            <span class="text-xs font-medium bg-violet-600/10 dark:bg-violet-600/30 text-violet-600 dark:text-violet-300 px-2 py-1 rounded-full">Tailwind CSS</span>
+                            <span class="text-xs font-medium bg-violet-600/10 dark:bg-violet-600/30 text-violet-600 dark:text-violet-300 px-2 py-1 rounded-full">JavaScript</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-pink-600 dark:text-pink-400 hover:text-pink-700 dark:hover:text-pink-300 font-semibold transition duration-300">
+                            View Project
+                            <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 6. Contact Section (now section 6) -->
+        <section id="contact" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 dark:bg-gray-900 bg-white">
+            <div class="max-w-xl mx-auto text-center bg-gray-200 dark:bg-gray-800 p-8 sm:p-10 rounded-xl shadow-2xl dark:shadow-gray-700/50 border border-gray-300 dark:border-gray-700 transform hover:scale-[1.01] transition duration-500">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-violet-600 dark:text-violet-400">Get In Touch</h2>
+                <p class="text-gray-700 dark:text-gray-300 mb-8">
+                    Have a project in mind or just want to chat? Feel free to reach out using the details below.
+                </p>
+
+                <div class="space-y-4 text-left inline-block">
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-pink-600 dark:text-pink-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <span class="text-gray-700 dark:text-gray-300 text-lg">vignesh638137@gmail.com</span>
+                    </div>
+
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-pink-600 dark:text-pink-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.136-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.742 7 2.404v6.831z"/></svg>
+                        <a href="https://www.linkedin.com/in/vignesh-s-1469a2338" target="_blank" class="text-gray-700 dark:text-gray-300 text-lg hover:text-violet-600 dark:hover:text-violet-400 transition duration-300">
+                            LinkedIn Profile
+                        </a>
+                    </div>
+                </div>
+
+                <a href="mailto:vignesh638137@gmail.com" class="mt-8 inline-block px-8 py-3 bg-pink-600 text-white font-bold rounded-xl shadow-xl shadow-pink-500/50 hover:bg-pink-700 transition duration-300 transform hover:scale-105 active:scale-95">
+                    Send Me an Email
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 dark:bg-gray-900 border-t border-gray-300 dark:border-gray-800 mt-12 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-500 dark:text-gray-500 text-sm">
+                &copy; <span id="year"></span> Vignesh. S. All rights reserved. | Built with HTML & Tailwind CSS.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Dynamic Functionality -->
+    <script>
+        // Set the current year in the footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Functionality: Theme Toggle
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement; // Get the root <html> element
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+
+        // IIFE for initial theme setup
+        (function initialThemeSetup() {
+            // 1. Initial setup based on localStorage or system preference
+            const savedTheme = localStorage.getItem('color-theme');
+            const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            // Determine if dark mode should be active initially
+            // Priority: 1. Saved preference 'dark' > 2. No saved preference + system is dark > 3. Default to light
+            const currentThemeIsDark = savedTheme === 'dark' || (!savedTheme && systemDark);
+
+            if (currentThemeIsDark) {
+                htmlElement.classList.add('dark');
+                darkIcon.classList.remove('hidden');
+            } else {
+                htmlElement.classList.remove('dark');
+                lightIcon.classList.remove('hidden');
+            }
+        })();
+
+
+        // 2. Add event listener for toggle on click
+        themeToggleBtn.addEventListener('click', function () {
+            // Toggle 'dark' class on <html> element
+            htmlElement.classList.toggle('dark');
+
+            // Toggle icons visibility
+            lightIcon.classList.toggle('hidden');
+            darkIcon.classList.toggle('hidden');
+
+            // Save the new preference
+            if (htmlElement.classList.contains('dark')) {
+                localStorage.setItem('color-theme', 'dark');
+            } else {
+                localStorage.setItem('color-theme', 'light');
+            }
+        });
+    </script>
+</body>
+</html>
